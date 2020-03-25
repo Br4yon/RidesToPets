@@ -1,4 +1,4 @@
-package com.example.ridestopets;
+package controler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.ridestopets.R;
 
 public class HomeActivity extends AppCompatActivity {
 

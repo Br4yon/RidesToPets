@@ -1,4 +1,4 @@
-package com.example.ridestopets;
+package controler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,8 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
 import android.widget.TextView;
+
+import com.example.ridestopets.R;
 
 public class MainActivity extends AppCompatActivity {
 
