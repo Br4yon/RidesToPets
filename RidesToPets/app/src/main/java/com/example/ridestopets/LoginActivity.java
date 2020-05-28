@@ -1,6 +1,8 @@
-package controler;
+package com.example.ridestopets;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,13 +11,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.ridestopets.R;
-
 public class LoginActivity extends AppCompatActivity {
 
+    private static final int NOTIFICATION_ID = 1;
+    private static final String ANDROID = "USER";
     private EditText editEmail;
     private EditText editSenha;
-    private Button btnEntrar;
+    private Button btnEntrar,btnCadastrar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +26,7 @@ public class LoginActivity extends AppCompatActivity {
 
         //adiciona nas variaveis o campo com o id setado
          btnEntrar = (Button) findViewById(R.id.btnEntrar);
+         btnCadastrar = (Button) findViewById(R.id.btnCadastrar);
          editEmail = (EditText) findViewById(R.id.editEmail);
          editSenha = (EditText) findViewById(R.id.editSenha);
 
@@ -38,6 +41,15 @@ public class LoginActivity extends AppCompatActivity {
                     Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                     startActivity(intent);
 
+                    NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext(), ANDROID);
+                    builder.setSmallIcon(R.drawable.ic_check_box_black_24dp);
+                    builder.setContentText("você logo com sucesso !!! ");
+                    builder.setContentTitle("Notificação temporaria");
+                    builder.setPriority(NotificationCompat.PRIORITY_DEFAULT);
+
+                    NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(getApplicationContext());
+                    notificationManagerCompat.notify(NOTIFICATION_ID, builder.build());
+
                 }else
                     // Toast.makeText escreve na tela(tipo pop-up) por um determinado tempo
                     Toast.makeText(LoginActivity.this, "Email ou Senha invalido", Toast.LENGTH_SHORT).show();
@@ -45,6 +57,13 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-    }
+        btnCadastrar.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intentCad = new Intent(LoginActivity.this, CadUserActivity.class);
+                startActivity(intentCad);
+                }
+
+            });
+        }
 
 }

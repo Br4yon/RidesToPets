@@ -1,8 +1,13 @@
-package controler;
+package com.example.ridestopets;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
@@ -10,13 +15,13 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.ridestopets.R;
-
 public class HomeActivity extends AppCompatActivity {
 
-    RadioGroup radioGroup;
-    RadioButton radioButton;
-    TextView textView;
+     RadioGroup radioGroup;
+     RadioButton radioButton;
+     TextView textView;
+     Button buscar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +31,7 @@ public class HomeActivity extends AppCompatActivity {
         radioGroup = findViewById(R.id.radioGroup);
         textView = findViewById(R.id.textListUser);
 
-        Button buscar = findViewById(R.id.btnBuscar);
+        buscar = (Button) findViewById(R.id.btnBuscar);
 
         buscar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,7 +40,7 @@ public class HomeActivity extends AppCompatActivity {
                 int radioId = radioGroup.getCheckedRadioButtonId();
                 radioButton = findViewById(radioId);
 
-                textView.setText("Herois para pets : "+radioButton.getText());
+                textView.setText(radioButton.getText());
             }
         });
     }
@@ -46,4 +51,6 @@ public class HomeActivity extends AppCompatActivity {
 
         Toast.makeText(this, radioButton.getText(), Toast.LENGTH_SHORT).show();
     }
+
+
 }

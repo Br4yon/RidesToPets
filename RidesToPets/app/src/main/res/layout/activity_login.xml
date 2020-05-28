@@ -5,8 +5,8 @@
     android:id="@+id/TELAlogin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#936C37"
-    tools:context="controler.LoginActivity">
+    android:background="#007F5B3E"
+    tools:context=".LoginActivity">
 
     <EditText
         android:id="@+id/editEmail"
@@ -16,62 +16,63 @@
         android:hint="admin@ridestopets.com"
         android:inputType="textEmailAddress"
         android:shadowColor="#00ACC1"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#5CFFFFFF"
+        android:textColor="#7f5b3e"
+        android:textColorHint="#D07F5B3E"
         app:layout_constraintBottom_toTopOf="@+id/textSenha"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.881" />
-
-    <TextView
-        android:id="@+id/textSenha"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Senha:"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/editSenha"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.277"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <EditText
-        android:id="@+id/editSenha"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="88dp"
-        android:ems="10"
-        android:hint="******"
-        android:inputType="textPassword"
-        android:selectAllOnFocus="true"
-        android:shadowColor="#00ACC1"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#5CFFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/btnEntrar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintVertical_bias="0.812" />
 
     <TextView
         android:id="@+id/textEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Email :"
-        android:textColor="#FFFFFF"
+        android:textColor="#7f5b3e"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/editEmail"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.279"
+        app:layout_constraintHorizontal_bias="0.268"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editSenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="44dp"
+        android:ems="10"
+        android:hint="******"
+        android:inputType="textPassword"
+        android:selectAllOnFocus="true"
+        android:shadowColor="#00ACC1"
+        android:textColor="#7f5b3e"
+        android:textColorHint="#D07F5B3E"
+        app:layout_constraintBottom_toTopOf="@+id/btnEntrar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textRides"
+        android:id="@+id/textSenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Senha:"
+        android:textColor="#7f5b3e"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/editSenha"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.268"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textCad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="RIDEStoPETS"
         android:textAllCaps="false"
-        android:textColor="#FFFFFF"
+        android:textColor="#7f5b3e"
         android:textSize="30sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toTopOf="@+id/textEmail"
@@ -86,14 +87,29 @@
         android:layout_width="210dp"
         android:layout_height="42dp"
         android:layout_marginTop="60dp"
-        android:background="#7A582A"
+        android:background="#7f5b3e"
         android:text="Entrar"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.869" />
+        app:layout_constraintVertical_bias="0.852" />
+
+    <Button
+        android:id="@+id/btnCadastrar"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginTop="60dp"
+        android:background="#007F5B3E"
+        android:text="Cadastre-se Aqui"
+        android:textColor="#7f5b3e"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.949" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
