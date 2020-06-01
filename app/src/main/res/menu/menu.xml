@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/home"
+        android:title="Home"
+        app:showAsAction="always"/>
+
+    <item android:id="@+id/confi"
+        android:title="conf"
+        app:showAsAction="never">
+
+        <item android:id="@+id/perfil"
+            android:title="Perfil"
+            app:showAsAction="never"/>
+
+        <item android:id="@+id/sair"
+            android:title="Sair"
+            app:showAsAction="never"/>
+
+    </item>
+
+
+<!--    <item android:id="@+id/home"-->
+<!--        android:title="@string/home"-->
+<!--        app:showAsAction="always"/>-->
+
+<!--        <item android:id="@+id/conf"-->
+<!--            android:title="conf"-->
+<!--            app:showAsAction="never"/>-->
+
+<!--        <item android:id="@+id/perfil"-->
+<!--                android:title="perfil"-->
+<!--                app:ShowAsAction="never"/>-->
+
+<!--        <item android:id="@+id/sair"-->
+<!--                android:title="sair"-->
+<!--                app:ShowAsAction="never"/>-->
+
+
+</menu>
