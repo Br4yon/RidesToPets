@@ -3,9 +3,8 @@ package com.example.ridestopets.Controllers;
 public class Users {
 
     private int id, idade;
-    private String nome,cpf,email,endereco,telefone;
-    private char sexo;
-    private float altura, peso;
+    private String nome,cpf,email,endereco,telefone,senha , data;
+
 
     public int getId() {
         return id;
@@ -14,7 +13,7 @@ public class Users {
     public void setId(int id) {
         this.id = id;
     }
-    public int getIddade() {
+    public int getIdade() {
         return idade;
     }
 
@@ -59,27 +58,21 @@ public class Users {
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
-    public char getSexo() {
-        return sexo;
+
+    public String getSenha() {
+        return senha;
     }
 
-    public void setSexo(char sexo) {
-        this.sexo = sexo;
-    }
-    public float getAltura() {
-        return altura;
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 
-    public void setAltura(float altura) {
-        this.altura = altura;
-    }
-    public float getPeso() {
-        return peso;
+    public String getData() {
+        return data;
     }
 
-    public void setPeso(float peso) {
-        this.peso = peso;
+    public void setData(String data) {
+        this.data = data;
     }
-
 
 }
