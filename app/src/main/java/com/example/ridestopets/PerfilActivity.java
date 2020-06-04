@@ -4,32 +4,51 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.EditText;
 import android.widget.TextView;
+
+import com.example.ridestopets.Controllers.Users;
+import com.example.ridestopets.Models.Conexao;
+import com.example.ridestopets.Models.UsersDao;
 
 public class PerfilActivity extends AppCompatActivity {
 
-    private TextView editName, editTelefone, editEmail, editSenha;
+    private EditText editName, editTelefone, editEmail, editSenha;
+    private UsersDao dao;
+    private Conexao conexao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil);
 
-        editName = (TextView) findViewById(R.id.editName);
-        editTelefone = (TextView) findViewById(R.id.editTelefone);
-        editEmail = (TextView) findViewById(R.id.editEmail);
-        editSenha = (TextView) findViewById(R.id.editSenha);
+        editName = (EditText) findViewById(R.id.editName);
+        editTelefone = (EditText) findViewById(R.id.editTelefone);
+        editEmail = (EditText) findViewById(R.id.editEmail);
+        editSenha = (EditText) findViewById(R.id.editSenha);
 
-        Intent intent = getIntent();
+        conexao = new Conexao(this);
+        dao = new UsersDao();
+        dao.setConexao(conexao);
 
-//        Recuperei a string da outra activity
-//        String name = intent.getStringExtra("name");
+//        a contagem do proximo numero !!!
+        int id = 14;
+        perfil(id);
 
-        editName.setText(intent.getStringExtra("name"));
-        editTelefone.setText(intent.getStringExtra("telefone"));
-        editEmail.setText(intent.getStringExtra("email"));
-        editSenha.setText(intent.getStringExtra("senha"));
+    }
 
-
+    public void perfil(int id){
+        Users userperfil = dao.perfil(id);
+        editName.setText(userperfil.getNome());
+        editEmail.setText(userperfil.getEmail());
+        editTelefone.setText(userperfil.getTelefone());
+//        a.setNome(cursor.getString(0));
+//        a.setCpf(cursor.getString(1));
+//        a.setEmail(cursor.getString(2));
+//        a.setEndereco(cursor.getString(3));
+//        a.setData(cursor.getString(4));
+//        a.setTelefone(cursor.getString(5));
+//        a.setSenha(cursor.getString(6));
+//        a.setIdade(cursor.getInt(7));
     }
 }

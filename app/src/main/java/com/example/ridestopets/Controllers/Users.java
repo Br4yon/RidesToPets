@@ -1,9 +1,14 @@
 package com.example.ridestopets.Controllers;
 
-public class Users {
+import java.io.Serializable;
 
-    private int id, idade;
-    private String nome,cpf,email,endereco,telefone,senha , data;
+public class Users implements Serializable {
+
+    private int id;
+    private String idade;
+    private String nome,cpf,email,endereco,telefone,senha,data;
+
+//    data não consegui colocar ainda ...
 
 
     public int getId() {
@@ -13,11 +18,11 @@ public class Users {
     public void setId(int id) {
         this.id = id;
     }
-    public int getIdade() {
+    public String getIdade() {
         return idade;
     }
 
-    public void setIdade(int idade) {
+    public void setIdade(String idade) {
         this.idade = idade;
     }
 
@@ -50,7 +55,6 @@ public class Users {
         this.endereco = endereco;
     }
 
-
     public String getTelefone() {
         return telefone;
     }
@@ -74,5 +78,9 @@ public class Users {
     public void setData(String data) {
         this.data = data;
     }
+
+
+
+
 
 }

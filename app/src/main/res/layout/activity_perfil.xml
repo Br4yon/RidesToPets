@@ -24,11 +24,10 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
+        <EditText
             android:id="@+id/editName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="196dp"
             android:ems="10"
             android:text="@string/settext"
             android:textColor="#7f5b3e"
@@ -37,7 +36,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textCad" />
 
-        <TextView
+        <EditText
             android:id="@+id/editEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -51,7 +50,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTelefone" />
 
-        <TextView
+        <EditText
             android:id="@+id/editSenha"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -64,7 +63,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editEmail" />
 
-        <TextView
+        <EditText
             android:id="@+id/editTelefone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
