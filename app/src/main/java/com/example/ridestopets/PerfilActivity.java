@@ -2,10 +2,8 @@ package com.example.ridestopets;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import com.example.ridestopets.Controllers.Users;
 import com.example.ridestopets.Models.Conexao;
@@ -23,9 +21,9 @@ public class PerfilActivity extends AppCompatActivity {
         setContentView(R.layout.activity_perfil);
 
         editName = (EditText) findViewById(R.id.editName);
-        editTelefone = (EditText) findViewById(R.id.editTelefone);
-        editEmail = (EditText) findViewById(R.id.editEmail);
-        editSenha = (EditText) findViewById(R.id.editSenha);
+        editTelefone = (EditText) findViewById(R.id.editIdade);
+        editEmail = (EditText) findViewById(R.id.editTamanho);
+        editSenha = (EditText) findViewById(R.id.editData);
 
         conexao = new Conexao(this);
         dao = new UsersDao();

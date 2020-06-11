@@ -2,10 +2,8 @@ package com.example.ridestopets.Controllers;
 
 public class Animal {
 
-    private int id, idade;
-    private String nome,especie,raca;
-    private char tamanho;
-    private float peso;
+    private int id;
+    private String nome,especie,raca, idade, tamanho, data ;
 
     public int getId() {
         return id;
@@ -14,11 +12,11 @@ public class Animal {
     public void setId(int id) {
         this.id = id;
     }
-    public int getIddade() {
+    public String getIdade() {
         return idade;
     }
 
-    public void setIdade(int idade) {
+    public void setIdade(String idade) {
         this.idade = idade;
     }
 
@@ -44,20 +42,20 @@ public class Animal {
         this.raca = raca;
     }
 
-    public char getTamanho() {
+    public String getTamanho() {
         return tamanho;
     }
 
-    public void setTamanho(char tamanho) {
+    public void setTamanho(String tamanho) {
         this.tamanho = tamanho;
     }
 
-    public float getPeso() {
-        return peso;
+    public String getData() {
+        return data;
     }
 
-    public void setPeso(float peso) {
-        this.peso = peso;
+    public void setData(String peso) {
+        this.data = data;
     }
 
 

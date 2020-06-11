@@ -14,7 +14,7 @@ public class UsersDao {
     private String cpf = "cpf" ;
     private String email = "email";
     private String endereco = "endereco";
-    private String date = "date";
+    private String data = "data";
     private String telefone = "telefone";
     private String senha = "senha";
     private String idade = "idade";
@@ -36,14 +36,14 @@ public class UsersDao {
         values.put(telefone, users.getTelefone());
         values.put(email, users.getEmail());
         values.put(endereco, users.getEndereco());
-//        values.put(date, users.getData());
+//        values.put(data, users.getData());
         values.put(senha, users.getSenha());
         return banco.insert(nome_tabela, null, values);
     }
 
     public Users login(String email,String senha){
         Users a = new Users();
-        String querry = "SELECT " + nome + ", " + cpf + " , " + email + " , " + endereco + "," + date +
+        String querry = "SELECT " + nome + ", " + cpf + " , " + email + " , " + endereco + "," + data +
                 ", " + telefone + " , " + senha + " , " + idade + " FROM " + nome_tabela + " WHERE " +
                 "email=" + email + " AND " +
                 "senha=" + senha;

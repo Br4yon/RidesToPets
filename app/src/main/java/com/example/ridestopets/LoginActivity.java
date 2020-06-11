@@ -25,10 +25,10 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         //adiciona nas variaveis o campo com o id setado
-         btnEntrar = (Button) findViewById(R.id.btnEntrar);
+         btnEntrar = (Button) findViewById(R.id.btnCadPet);
          btnCadastrar = (Button) findViewById(R.id.btnCadastrar);
-         editEmail = (EditText) findViewById(R.id.editEmail);
-         editSenha = (EditText) findViewById(R.id.editSenha);
+         editEmail = (EditText) findViewById(R.id.editTamanho);
+         editSenha = (EditText) findViewById(R.id.editData);
 
          // evento de click no botao
         btnEntrar.setOnClickListener(new View.OnClickListener(){

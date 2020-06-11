@@ -37,7 +37,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textCad" />
 
         <EditText
-            android:id="@+id/editEmail"
+            android:id="@+id/editTamanho"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
@@ -48,10 +48,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTelefone" />
+            app:layout_constraintTop_toBottomOf="@+id/editIdade" />
 
         <EditText
-            android:id="@+id/editSenha"
+            android:id="@+id/editData"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
@@ -61,10 +61,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editEmail" />
+            app:layout_constraintTop_toBottomOf="@+id/editTamanho" />
 
         <EditText
-            android:id="@+id/editTelefone"
+            android:id="@+id/editIdade"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"

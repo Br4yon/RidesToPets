@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CadPetsActivity">
+
+    <Button
+        android:id="@+id/btnCadPet"
+        android:layout_width="210dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="#7f5b3e"
+        android:text="@string/cadastrar"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/editData"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/editData"
+        app:layout_constraintTop_toBottomOf="@+id/editData"
+        app:layout_constraintVertical_bias="0.516" />
+
+    <EditText
+        android:id="@+id/editName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/name"
+        android:textColor="#7f5b3e"
+        android:textColorHighlight="#DF7F5B3E"
+        android:textColorHint="#DF7F5B3E"
+        app:layout_constraintEnd_toEndOf="@+id/editEspecie"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editEspecie"
+        app:layout_constraintTop_toBottomOf="@+id/editEspecie" />
+
+    <TextView
+        android:id="@+id/textCad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/cadastro"
+        android:textAllCaps="true"
+        android:textColor="#7f5b3e"
+        android:textSize="30sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editIdade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:hint="Idade"
+        android:inputType="numberSigned"
+        app:layout_constraintEnd_toEndOf="@+id/editName"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editName"
+        app:layout_constraintTop_toBottomOf="@+id/editName" />
+
+    <EditText
+        android:id="@+id/editRaca"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:hint="Raça"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/editIdade"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editIdade"
+        app:layout_constraintTop_toBottomOf="@+id/editIdade" />
+
+    <EditText
+        android:id="@+id/editData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Data"
+        android:inputType="textPersonName"
+        android:textColor="#7f5b3e"
+        android:textColorHighlight="#DF7F5B3E"
+        android:textColorHint="#DF7F5B3E"
+        app:layout_constraintEnd_toEndOf="@+id/editRaca"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editRaca"
+        app:layout_constraintTop_toBottomOf="@+id/editTamanho" />
+
+    <EditText
+        android:id="@+id/editEspecie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Especie"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/textCad"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="@+id/textCad"
+        app:layout_constraintTop_toBottomOf="@+id/textCad" />
+
+    <EditText
+        android:id="@+id/editTamanho"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint='Tamanho "G","M","P"'
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editRaca" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

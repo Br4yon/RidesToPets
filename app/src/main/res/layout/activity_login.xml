@@ -9,7 +9,7 @@
     tools:context=".LoginActivity">
 
     <EditText
-        android:id="@+id/editEmail"
+        android:id="@+id/editTamanho"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -32,13 +32,13 @@
         android:text="Email :"
         android:textColor="#7f5b3e"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/editEmail"
+        app:layout_constraintBottom_toTopOf="@+id/editTamanho"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.268"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editSenha"
+        android:id="@+id/editData"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="44dp"
@@ -49,7 +49,7 @@
         android:shadowColor="#00ACC1"
         android:textColor="#7f5b3e"
         android:textColorHint="#D07F5B3E"
-        app:layout_constraintBottom_toTopOf="@+id/btnEntrar"
+        app:layout_constraintBottom_toTopOf="@+id/btnCadPet"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent" />
@@ -61,7 +61,7 @@
         android:text="Senha:"
         android:textColor="#7f5b3e"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/editSenha"
+        app:layout_constraintBottom_toTopOf="@+id/editData"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.268"
         app:layout_constraintStart_toStartOf="parent" />
@@ -83,7 +83,7 @@
         app:layout_constraintVertical_bias="0.541" />
 
     <Button
-        android:id="@+id/btnEntrar"
+        android:id="@+id/btnCadPet"
         android:layout_width="210dp"
         android:layout_height="42dp"
         android:layout_marginTop="60dp"

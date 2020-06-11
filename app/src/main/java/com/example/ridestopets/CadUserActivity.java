@@ -2,7 +2,6 @@ package com.example.ridestopets;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -27,11 +26,11 @@ public class CadUserActivity extends AppCompatActivity {
         setContentView(R.layout.activity_cad_user);
 
         //adiciona nas variaveis o campo com o id setado
-        btnCadastrar = (Button) findViewById(R.id.btnEntrar);
+        btnCadastrar = (Button) findViewById(R.id.btnCadPet);
         editName = (EditText) findViewById(R.id.editName);
-        editTelefone = (EditText) findViewById(R.id.editTelefone);
-        editEmail = (EditText) findViewById(R.id.editEmail);
-        editSenha = (EditText) findViewById(R.id.editSenha);
+        editTelefone = (EditText) findViewById(R.id.editIdade);
+        editEmail = (EditText) findViewById(R.id.editTamanho);
+        editSenha = (EditText) findViewById(R.id.editData);
         editData = (EditText) findViewById(R.id.editData);
         editIdade = (EditText) findViewById(R.id.editIdade);
         editCpf = (EditText) findViewById(R.id.editCpf);
