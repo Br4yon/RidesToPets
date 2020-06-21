@@ -19,8 +19,8 @@ public class Conexao extends SQLiteOpenHelper {
                 "nome varchar(50) , idade varchar(3) , cpf varchar(50) , telefone varchar(50) , email varchar(50) , endereco varchar(50) , date varchar(20) , senha varchar(50))");
 
 //        ###   peso?   ###
-        db.execSQL("create table tb_pets(id integer primary key autoincrement," +
-                "nome varchar(50), raca varchar(50), especie varchar(50), idade varchar(2), tamanho varchar(10), date varchar(20))");
+//        db.execSQL("create table tb_pets(id integer primary key autoincrement," +
+//                "nome varchar(50), raca varchar(50), especie varchar(50), idade varchar(2), tamanho varchar(10), date varchar(20))");
 
 //        ###   tb_transações   ###
 //        db.execSQL("create table tb_transacoes(id integer primary key autoincrement," +

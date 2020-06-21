@@ -13,6 +13,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 
 /**
@@ -24,12 +25,27 @@ public class FragmentMenu extends Fragment {
         // Required empty public constructor
     }
 
+    private int id_user;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_menu, container, false);
+        View rootview = inflater.inflate(R.layout.fragment_menu, container, false);
+
+
+        try {
+//            id_user =
+//            Intent userLogin = getActivity().getIntent();
+//
+//            id_user = userLogin.getIntExtra("id_user" , 0);
+
+        }catch(Exception e) {
+//            Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+        }
+
+        return rootview;
     }
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -52,8 +68,15 @@ public class FragmentMenu extends Fragment {
         switch (item.getItemId()){
 
             case R.id.home:
-                Intent intent = new Intent(getContext(),HomeActivity.class);
-                startActivity(intent);
+                try {
+                    Intent userLogin = getActivity().getIntent();
+                    Intent intent = new Intent(getContext(),HomeActivity.class);
+                    intent.putExtra("id_user",userLogin.getIntExtra("id_user" , 0));
+                    startActivity(intent);
+                }catch(Exception e) {
+                    Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+                }
+
                 return true;
 
             case R.id.sair:
@@ -62,8 +85,15 @@ public class FragmentMenu extends Fragment {
                 return true;
 
             case R.id.perfil:
-                Intent viewPerfil = new Intent(getContext(),PerfilActivity.class);
-                startActivity(viewPerfil);
+                try {
+                    Intent userLogin = getActivity().getIntent();
+                    Intent viewPerfil = new Intent(getContext(),PerfilActivity.class);
+                    viewPerfil.putExtra("id_user",userLogin.getIntExtra("id_user" , 0));
+                    startActivity(viewPerfil);
+                }catch(Exception e) {
+                    Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+                }
+
                 return true;
         }
 

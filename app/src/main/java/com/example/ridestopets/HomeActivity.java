@@ -33,6 +33,18 @@ public class HomeActivity extends AppCompatActivity {
 
         buscar = (Button) findViewById(R.id.btnBuscar);
 
+
+//        Intent userLogin = getIntent();
+//        Toast.makeText(this, "ID INTENT : " + userLogin.getIntExtra("id_user" , 0), Toast.LENGTH_SHORT).show();
+
+
+//        try {
+//
+//        }catch(Exception e) {
+//            Toast.makeText(HomeActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
+//        }
+
+
         buscar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -26,11 +26,11 @@ public class CadUserActivity extends AppCompatActivity {
         setContentView(R.layout.activity_cad_user);
 
         //adiciona nas variaveis o campo com o id setado
-        btnCadastrar = (Button) findViewById(R.id.btnCadPet);
+        btnCadastrar = (Button) findViewById(R.id.btnEntrar);
         editName = (EditText) findViewById(R.id.editName);
-        editTelefone = (EditText) findViewById(R.id.editIdade);
-        editEmail = (EditText) findViewById(R.id.editTamanho);
-        editSenha = (EditText) findViewById(R.id.editData);
+        editTelefone = (EditText) findViewById(R.id.editTelefone);
+        editEmail = (EditText) findViewById(R.id.editEmail);
+        editSenha = (EditText) findViewById(R.id.editSenha);
         editData = (EditText) findViewById(R.id.editData);
         editIdade = (EditText) findViewById(R.id.editIdade);
         editCpf = (EditText) findViewById(R.id.editCpf);

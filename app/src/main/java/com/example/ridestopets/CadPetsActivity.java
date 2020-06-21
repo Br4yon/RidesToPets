@@ -29,7 +29,7 @@ public class CadPetsActivity extends AppCompatActivity {
         editIdade = (EditText) findViewById(R.id.editIdade);
         editRaca = (EditText) findViewById(R.id.editRaca);
         editData = (EditText) findViewById(R.id.editData);
-        editTamanho = (EditText) findViewById(R.id.editTamanho);
+        editTamanho = (EditText) findViewById(R.id.editEmail);
         btnCadPet = (Button) findViewById(R.id.btnCadPet);
 
 
