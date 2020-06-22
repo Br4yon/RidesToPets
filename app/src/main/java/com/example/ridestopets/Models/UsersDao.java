@@ -15,7 +15,7 @@ public class UsersDao {
     private String cpf = "cpf" ;
     private String email = "email";
     private String endereco = "endereco";
-    private String data = "data";
+    private String date = "date";
     private String telefone = "telefone";
     private String senha = "senha";
     private String idade = "idade";
@@ -37,7 +37,7 @@ public class UsersDao {
         values.put(telefone, users.getTelefone());
         values.put(email, users.getEmail());
         values.put(endereco, users.getEndereco());
-//        values.put(data, users.getData());
+        values.put(date, users.getData());
         values.put(senha, users.getSenha());
         return banco.insert(nome_tabela, null, values);
     }
@@ -64,7 +64,7 @@ public class UsersDao {
 
     public Users perfil(int id){
         Users a = new Users();
-        String querry = "SELECT " + nome + " , " + email + " , " + telefone + " FROM " + nome_tabela + " WHERE id=" + id;
+        String querry = "SELECT " + nome + " , " + email + " , " + telefone + " , " + senha + " FROM " + nome_tabela + " WHERE id=" + id;
         Cursor cursor = banco.rawQuery(querry,null);
 
         while(cursor.moveToNext()){

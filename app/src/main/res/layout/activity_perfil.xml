@@ -95,19 +95,20 @@
             android:textColor="#fff"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnAtualizar"
-            app:layout_constraintVertical_bias="0.348" />
+            app:layout_constraintTop_toBottomOf="@+id/btnAtualizar" />
 
         <Button
             android:id="@+id/btnAtualizar"
             android:layout_width="156dp"
             android:layout_height="45dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="52dp"
             android:background="#7f5b3e"
             android:text="Atualizar Conta"
             android:textColor="#fff"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editSenha" />
 

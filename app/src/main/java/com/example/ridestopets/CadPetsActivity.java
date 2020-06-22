@@ -2,6 +2,7 @@ package com.example.ridestopets;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -18,62 +19,74 @@ public class CadPetsActivity extends AppCompatActivity {
     private Button btnCadPet;
     private PetsDao dao;
     private Conexao conexao;
+    private int pai;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cad_pets);
+        conexao = new Conexao(this);
+        dao = new PetsDao();
+        dao.setConexao(conexao);
 
         editEspecie = (EditText) findViewById(R.id.editEspecie);
         editName = (EditText) findViewById(R.id.editName);
         editIdade = (EditText) findViewById(R.id.editIdade);
         editRaca = (EditText) findViewById(R.id.editRaca);
         editData = (EditText) findViewById(R.id.editData);
-        editTamanho = (EditText) findViewById(R.id.editEmail);
+        editTamanho = (EditText) findViewById(R.id.editTamanho);
         btnCadPet = (Button) findViewById(R.id.btnCadPet);
 
+        try {
+            Intent IntentIdPai = getIntent();
+            pai = IntentIdPai.getIntExtra("id_user" , 0);
+            Toast.makeText(CadPetsActivity.this, String.valueOf(pai), Toast.LENGTH_SHORT).show();
 
-        conexao = new Conexao(this);
-        dao = new PetsDao();
-        dao.setConexao(conexao);
+        }catch(Exception e) {
+            Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
+        }
 
-        // evento de click no botao
         btnCadPet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(editName.getText().toString().isEmpty()) {
-                    Toast.makeText(CadPetsActivity.this, "campo NOME não pode ser vazio !!! ", Toast.LENGTH_SHORT).show();
-                }else if(editEspecie.getText().toString().isEmpty()) {
-                    Toast.makeText(CadPetsActivity.this, "campo ESPECIE não pode ser vazio !!! ", Toast.LENGTH_SHORT).show();
-                }else if(editIdade.getText().toString().isEmpty()) {
-                    Toast.makeText(CadPetsActivity.this, "campo IDADE não pode ser vazio !!! ", Toast.LENGTH_SHORT).show();
-                }else if(editRaca.getText().toString().isEmpty()) {
-                    Toast.makeText(CadPetsActivity.this, "campo RAÇA não pode ser vazio !!! ", Toast.LENGTH_SHORT).show();
-                }else if(editData.getText().toString().isEmpty()) {
-                    Toast.makeText(CadPetsActivity.this, "campo DATA não pode ser vazio !!! ", Toast.LENGTH_SHORT).show();
-                }else if(editTamanho.getText().toString().isEmpty()) {
-                    Toast.makeText(CadPetsActivity.this, "campo TAMANHO não pode ser vazio !!! ", Toast.LENGTH_SHORT).show();
-                }else {
 
-                    salvar();
-//                        Intent intent = new Intent(CadUserActivity.this, PerfilActivity.class);
-                }
+                cadPet();
+//                Toast.makeText(CadPetsActivity.this, "cadastrado com sucesso!!", Toast.LENGTH_SHORT).show();
 
             }
         });
 
     }
 
-        public void salvar(){
-        Animal a = new Animal();
-        a.setEspecie(editEspecie.getText().toString());
-        a.setNome(editName.getText().toString());
-        a.setIdade(editIdade.getText().toString());
-        a.setRaca(editRaca.getText().toString());
-        a.setTamanho(editTamanho.getText().toString());
-        a.setData(editData.getText().toString());
-        long id = dao.inserir(a);
+    public void cadPet() {
+        try {
 
-        Toast.makeText(CadPetsActivity.this, "Cadastrado com Sucesso" +id, Toast.LENGTH_SHORT).show();
+            Animal pet = new Animal();
+            pet.setEspecie(editEspecie.getText().toString());
+            pet.setNome(editName.getText().toString());
+            pet.setIdade(editIdade.getText().toString());
+            pet.setRaca(editRaca.getText().toString());
+            pet.setTamanho(editTamanho.getText().toString());
+            pet.setData(editData.getText().toString());
+            pet.setIdPai(pai);
+
+            long id = dao.inserirPet(pet);
+
+            Toast.makeText(CadPetsActivity.this,
+                    editEspecie.getText().toString() +
+                    editName.getText().toString()+
+                    editIdade.getText().toString()+
+                    editRaca.getText().toString()+
+                    editTamanho.getText().toString()+
+                    editData.getText().toString(), Toast.LENGTH_SHORT).show();
+
+            Toast.makeText(CadPetsActivity.this, "Cadastrado com Sucesso !!! " + id, Toast.LENGTH_SHORT).show();
+
+
+        } catch (Exception e)
+        {
+            Toast.makeText(CadPetsActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
+        }
     }
+
 }

@@ -34,6 +34,9 @@ public class FragmentMenu extends Fragment {
         // Inflate the layout for this fragment
         View rootview = inflater.inflate(R.layout.fragment_menu, container, false);
 
+        Intent userLogin = getActivity().getIntent();
+
+        id_user = userLogin.getIntExtra("id_user" , 0);
 
         try {
 //            id_user =
@@ -60,8 +63,6 @@ public class FragmentMenu extends Fragment {
         super.onCreateOptionsMenu(menu, inflater);
     }
 
-
-
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 //        return super.onOptionsItemSelected(item);
@@ -69,10 +70,32 @@ public class FragmentMenu extends Fragment {
 
             case R.id.home:
                 try {
-                    Intent userLogin = getActivity().getIntent();
                     Intent intent = new Intent(getContext(),HomeActivity.class);
-                    intent.putExtra("id_user",userLogin.getIntExtra("id_user" , 0));
+                    intent.putExtra("id_user",id_user);
                     startActivity(intent);
+                }catch(Exception e) {
+                    Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+                }
+
+                return true;
+
+            case R.id.perfil:
+                try {
+                    Intent viewPerfil = new Intent(getContext(),PerfilActivity.class);
+                    viewPerfil.putExtra("id_user",id_user);
+                    startActivity(viewPerfil);
+                }catch(Exception e) {
+                    Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+                }
+
+                return true;
+
+
+            case R.id.cadpet:
+                try {
+                    Intent viewCadPet = new Intent(getContext(),CadPetsActivity.class);
+                    viewCadPet.putExtra("id_user",id_user);
+                    startActivity(viewCadPet);
                 }catch(Exception e) {
                     Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_LONG).show();
                 }
@@ -82,18 +105,6 @@ public class FragmentMenu extends Fragment {
             case R.id.sair:
                 Intent exit = new Intent(getContext(),LoginActivity.class);
                 startActivity(exit);
-                return true;
-
-            case R.id.perfil:
-                try {
-                    Intent userLogin = getActivity().getIntent();
-                    Intent viewPerfil = new Intent(getContext(),PerfilActivity.class);
-                    viewPerfil.putExtra("id_user",userLogin.getIntExtra("id_user" , 0));
-                    startActivity(viewPerfil);
-                }catch(Exception e) {
-                    Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_LONG).show();
-                }
-
                 return true;
         }
 

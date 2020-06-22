@@ -1,8 +1,11 @@
 package com.example.ridestopets.Controllers;
 
-public class Animal {
+import java.io.Serializable;
+
+public class Animal implements Serializable {
 
     private int id;
+    private int idPai;
     private String nome,especie,raca, idade, tamanho, data ;
 
     public int getId() {
@@ -12,6 +15,15 @@ public class Animal {
     public void setId(int id) {
         this.id = id;
     }
+
+    public int getIdPai() {
+        return idPai;
+    }
+
+    public void setIdPai(int idPai) {
+        this.idPai = idPai;
+    }
+
     public String getIdade() {
         return idade;
     }
@@ -54,7 +66,7 @@ public class Animal {
         return data;
     }
 
-    public void setData(String peso) {
+    public void setData(String data) {
         this.data = data;
     }
 

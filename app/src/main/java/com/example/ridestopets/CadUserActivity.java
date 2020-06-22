@@ -2,6 +2,7 @@ package com.example.ridestopets;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -86,7 +87,9 @@ public class CadUserActivity extends AppCompatActivity {
         long id = dao.inserir(u);
 
 
+        Toast.makeText(CadUserActivity.this, "Cadastrado com Sucesso id : " +id + " data = "+u.getData(), Toast.LENGTH_SHORT).show();
 
-        Toast.makeText(CadUserActivity.this, "Cadastrado com Sucesso" +id + " data = "+u.getData(), Toast.LENGTH_SHORT).show();
+        Intent login = new Intent(this,LoginActivity.class);
+        startActivity(login);
     }
 }
