@@ -83,5 +83,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/btnExcluirPet"
+        android:layout_width="210dp"
+        android:layout_height="42dp"
+        android:background="#7f5b3e"
+        android:text="Excluir PET"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editData" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

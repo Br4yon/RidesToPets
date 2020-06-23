@@ -20,6 +20,7 @@ public class CadPetsActivity extends AppCompatActivity {
     private PetsDao dao;
     private Conexao conexao;
     private int pai;
+    int idpet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,14 +38,14 @@ public class CadPetsActivity extends AppCompatActivity {
         editTamanho = (EditText) findViewById(R.id.editTamanho);
         btnCadPet = (Button) findViewById(R.id.btnCadPet);
 
-        try {
-            Intent IntentIdPai = getIntent();
-            pai = IntentIdPai.getIntExtra("id_user" , 0);
-            Toast.makeText(CadPetsActivity.this, String.valueOf(pai), Toast.LENGTH_SHORT).show();
-
-        }catch(Exception e) {
-            Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
-        }
+//        try {
+//            Intent IntentIdPai = getIntent();
+//            pai = IntentIdPai.getIntExtra("id_user" , 0);
+//            Toast.makeText(CadPetsActivity.this, String.valueOf(pai), Toast.LENGTH_SHORT).show();
+//
+//        }catch(Exception e) {
+//            Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
+//        }
 
         btnCadPet.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,6 +61,8 @@ public class CadPetsActivity extends AppCompatActivity {
 
     public void cadPet() {
         try {
+            Intent IntentIdPai = getIntent();
+            pai = IntentIdPai.getIntExtra("id_user" , 0);
 
             Animal pet = new Animal();
             pet.setEspecie(editEspecie.getText().toString());
@@ -70,7 +73,7 @@ public class CadPetsActivity extends AppCompatActivity {
             pet.setData(editData.getText().toString());
             pet.setIdPai(pai);
 
-            long id = dao.inserirPet(pet);
+            idpet = (int) dao.inserirPet(pet);
 
             Toast.makeText(CadPetsActivity.this,
                     editEspecie.getText().toString() +
@@ -80,8 +83,12 @@ public class CadPetsActivity extends AppCompatActivity {
                     editTamanho.getText().toString()+
                     editData.getText().toString(), Toast.LENGTH_SHORT).show();
 
-            Toast.makeText(CadPetsActivity.this, "Cadastrado com Sucesso !!! " + id, Toast.LENGTH_SHORT).show();
+            Toast.makeText(CadPetsActivity.this, "Cadastrado com Sucesso !!! " + idpet, Toast.LENGTH_SHORT).show();
 
+            Intent intent = new Intent(CadPetsActivity.this, PerfilPetActivity.class);
+            intent.putExtra("id_pet", idpet);
+            intent.putExtra("id_user", pai);
+            startActivity(intent);
 
         } catch (Exception e)
         {

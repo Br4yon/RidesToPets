@@ -67,14 +67,7 @@ public class PerfilActivity extends AppCompatActivity {
         editTelefone.setText(userperfil.getTelefone());
         editEmail.setText(userperfil.getEmail());
         editSenha.setText(userperfil.getSenha());
-//        a.setNome(cursor.getString(0));
-//        a.setCpf(cursor.getString(1));
-//        a.setEmail(cursor.getString(2));
-//        a.setEndereco(cursor.getString(3));
-//        a.setData(cursor.getString(4));
-//        a.setTelefone(cursor.getString(5));
-//        a.setSenha(cursor.getString(6));
-//        a.setIdade(cursor.getInt(7));
+
     }
 
     public void Atualizar(){

@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.ridestopets.Controllers.Animal;
+import com.example.ridestopets.Controllers.Users;
 
 public class PetsDao {
 
@@ -43,7 +44,7 @@ public class PetsDao {
 
     public Animal perfil(int id){
         Animal a = new Animal();
-        String querry = "SELECT " + especie + " , " + nome + " , " + idade + " , " + raca + ", "+ tamanho +", "+ date +" FROM " + nome_tabela + " WHERE id=" + id;
+        String querry = "SELECT " + nome + " , " + idade + " , " + tamanho +", "+ date +" FROM " + nome_tabela + " WHERE id=" + id;
         Cursor cursor = banco.rawQuery(querry,null);
 
         while(cursor.moveToNext()){
@@ -56,6 +57,11 @@ public class PetsDao {
 
         return a;
     }
+
+    public void remover(String id){
+        banco.delete(nome_tabela, "id = ?", new String[]{id});
+    }
+
 
 }
 

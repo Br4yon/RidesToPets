@@ -26,6 +26,7 @@ public class FragmentMenu extends Fragment {
     }
 
     private int id_user;
+    private int idpet;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -35,18 +36,8 @@ public class FragmentMenu extends Fragment {
         View rootview = inflater.inflate(R.layout.fragment_menu, container, false);
 
         Intent userLogin = getActivity().getIntent();
-
         id_user = userLogin.getIntExtra("id_user" , 0);
-
-        try {
-//            id_user =
-//            Intent userLogin = getActivity().getIntent();
-//
-//            id_user = userLogin.getIntExtra("id_user" , 0);
-
-        }catch(Exception e) {
-//            Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_LONG).show();
-        }
+        idpet = userLogin.getIntExtra("id_pet" , 0);
 
         return rootview;
     }
@@ -96,6 +87,17 @@ public class FragmentMenu extends Fragment {
                     Intent viewCadPet = new Intent(getContext(),CadPetsActivity.class);
                     viewCadPet.putExtra("id_user",id_user);
                     startActivity(viewCadPet);
+                }catch(Exception e) {
+                    Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+                }
+
+                return true;
+
+            case R.id.perfilpet:
+                try {
+                    Intent viewPerfilPet = new Intent(getContext(),PerfilPetActivity.class);
+                    viewPerfilPet.putExtra("id_pet",idpet);
+                    startActivity(viewPerfilPet);
                 }catch(Exception e) {
                     Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_LONG).show();
                 }
